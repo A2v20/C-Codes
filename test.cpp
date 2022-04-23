@@ -1,18 +1,33 @@
 #include<iostream>
 using namespace std;
+
+class student{
+    private:
+    string name;
+
+    public:
+    void Get_name(void);
+    void Displayname(void);
+};
+
+void student :: Get_name(void){
+    cout<<"Enter student name: "<<endl;
+    cin>>name;
+}
+void student :: Displayname(){
+    if (name.empty())
+    {
+       cout<<"Unknown student"<<endl;
+    }
+    else{
+        cout<<"Student name is : "<<name<<endl;
+    }
+    
+}
+
 int main(){
-
-
-#ifndef ONLINE_JUDGE
-   freopen("input.txt","r",stdin);
-   freopen("output.txt","w",stdout);
-
-#endif
-int n,m;
-cin>>n>>m;
-cout<<n+m;
-
-
-
+    student balak;
+    balak.Get_name();
+    balak.Displayname();
 return 0;
 }
