@@ -1,34 +1,72 @@
+// #include <iostream>
+// using namespace std;
+
+// class Employee
+// {
+//     int id;
+//     int salary;
+
+// public:
+//     void setId(void)
+//     {
+//         salary = 122;
+//         cout << "Enter the id of employee" << endl;
+//         cin >> id;
+//     }
+
+//     void getId(void)
+//     {
+//         cout << "The id of this employee is " << id << endl;
+//     }
+// };
+
+// int main()
+// {
+//     // Employee harry, rohan, lovish, shruti;
+//     // harry.setId();
+//     // harry.getId();
+//     Employee fb[4];
+//     for (int i = 0; i < 4; i++)
+//     {
+//         fb[i].setId();
+//         fb[i].getId();
+//     }
+
+//     return 0;
+// }
 #include<iostream>
 using namespace std;
 
-class Employee
-{
-    private:
-        int a, b, c;
-    public:
-        int d, e;
-        void setData(int a1, int b1, int c1); // Declaration
-        void getData(){
-            cout<<"The value of a is "<<a<<endl;
-            cout<<"The value of b is "<<b<<endl;
-            cout<<"The value of c is "<<c<<endl;
-            cout<<"The value of d is "<<d<<endl;
-            cout<<"The value of e is "<<e<<endl;
+class complex{
+    int a;
+    int b;
+
+    public: 
+        void setData(int v1, int v2){
+            a = v1;
+            b = v2;
+        }
+
+        void setDataBySum(complex o1, complex o2){
+            a = o1.a + o2.a;
+            b = o1.b + o2.b;
+        }
+
+        void printNumber(){
+            cout<<"Your complex number is "<<a<<" + "<<b<<"i"<<endl;
         }
 };
 
-void Employee :: setData(int a1, int b1, int c1){
-    a = a1;
-    b = b1;
-    c = c1;
-}
-
 int main(){
-    Employee harry;
-    // harry.a = 134; -->This will throw error as a is private
-    harry.d = 34;
-    harry.e = 89;
-    harry.setData(1,2,4);
-    harry.getData();
+    complex c1, c2, c3;
+    c1.setData(1, 2);
+    c1.printNumber();
+
+    c2.setData(3, 4);
+    c2.printNumber();
+
+    c3.setDataBySum(c1, c2);
+    c3.printNumber();
     return 0;
 }
+
